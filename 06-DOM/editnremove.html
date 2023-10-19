@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM || chai aur code</title>
+</head>
+<body style="background-color: #292929; color: azure;">
+    <div class="parent">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName){
+        const list = document.createElement('li');
+        list.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(list)
+    };
+    addLang('Python')
+    addLang('Typescript')
+    addLang('Bootstrap')
+
+    function addOptilanguage(langName){
+        const list = document.createElement('li')
+        list.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(list)
+    };
+    addOptilanguage('Golang')
+    addOptilanguage('Ruby')
+    addOptilanguage('Swift')
+
+    ///edit n remove::::
+    //edit::
+    const secondlang = document.querySelector('li:nth-child(5)')
+    const newList = document.createElement('li')
+    newList.textContent = 'Mojo'
+    secondlang.replaceWith(newList);
+
+    const lang = document.querySelector('li:first-child')
+    lang.outerHTML = '<li>Angular</li>'
+
+    //remove::
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>
